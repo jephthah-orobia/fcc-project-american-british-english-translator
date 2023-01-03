@@ -133,7 +133,7 @@ suite('Unit Tests', () => {
             function (done) {
                 let amer;
                 assert.doesNotThrow(() => amer = translator.toAmerican("I've just got bits and bobs in my bum bag."));
-                assert.equal(amer, "I've just got <span class=\"highlight\">odds</span> and ends in my <span class=\"highlight\">fanny pack</span>.");
+                assert.equal(amer, "I've just got <span class=\"highlight\">odds and ends</span> in my <span class=\"highlight\">fanny pack</span>.");
                 done();
             });
 
@@ -175,32 +175,32 @@ suite('Unit Tests', () => {
         test("Mangoes are my favorite fruit.",
             function (done) {
                 let translation;
-                assert.doesNotThrow(() => translator.highlightTranslatable("Mangoes are my favorite fruit."));
-                assert.equal(translation, "Mangoes are my <span class=\"highlight\">favorite</span> fruit.")
+                assert.doesNotThrow(() => translation = translator.toBritish("Mangoes are my favorite fruit."));
+                assert.equal(translation, "Mangoes are my <span class=\"highlight\">favourite</span> fruit.")
                 done();
             });
 
         test("I ate yogurt for breakfast.",
             function (done) {
                 let translation;
-                assert.doesNotThrow(() => translator.highlightTranslatable("I ate yogurt for breakfast."));
-                assert.equal(translation, "I ate <span class=\"highlight\">yogurt</span> for breakfast.")
+                assert.doesNotThrow(() => translation = translator.toBritish("I ate yogurt for breakfast."));
+                assert.equal(translation, "I ate <span class=\"highlight\">yoghurt</span> for breakfast.")
                 done();
             });
 
         test("We watched the footie match for a while.",
             function (done) {
                 let translation;
-                assert.doesNotThrow(() => translator.highlightTranslatable("We watched the footie match for a while."));
-                assert.equal(translation, "We watched the <span class=\"highlight\">footie</span> match for a while.");
+                assert.doesNotThrow(() => translation = translator.toAmerican("We watched the footie match for a while."));
+                assert.equal(translation, "We watched the <span class=\"highlight\">soccer</span> match for a while.");
                 done();
             });
 
         test("Paracetamol takes up to an hour to work.",
             function (done) {
                 let translation;
-                assert.doesNotThrow(() => translator.highlightTranslatable("Paracetamol takes up to an hour to work."));
-                assert.equal(translation, "<span class=\"highlight\">Paracetamol</span> takes up to an hour to work.")
+                assert.doesNotThrow(() => translation = translator.toAmerican("Paracetamol takes up to an hour to work."));
+                assert.equal(translation, "<span class=\"highlight\">Tylenol</span> takes up to an hour to work.")
                 done();
             });
 
